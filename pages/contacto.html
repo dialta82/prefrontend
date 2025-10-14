@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+    <header>
+     <h1>Contacto</h1>   
+    </header>
+    
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    <main>
+        <h2>Dejanos tu mensaje</h2>
+        <form action="https://formspree.io/f/xldwvdoo" method="post">
+            <label for="name">Nombre</label><br>
+            <input type="text" id="name" name="Nombre" required><br><br>
+            <label for="email">Correo:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Mensaje:</label><br>
+            <textarea id="message" name="mensaje" rows="4" required></textarea><br><br>
+            <input type="submit" value="Enviar">
+        </form>
+        <h2>Mensajes recibidos</h2>
+        <table class="table" >
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Mensaje</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Juan Pérez</td>
+                    <td>juanperez@mail.com</td>
+                    <td>Consulta sobre cerrajería</td>
+                </tr>
+                <tr>
+                    <td>María López</td>
+                    <td>marialopez@mail.com</td>
+                    <td>¿Hacen reparaciones de tapicería?</td>
+                </tr>
+                <tr>
+                    <td>Carlos Díaz</td>
+                    <td>carlosdiaz@mail.com</td>
+                    <td>Quiero alquilar herramientas</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </main>
+    <footer>
+    <p>© 2025 Manosos - Todos los derechos reservados</p>
+    </footer>
+</body>
+
+</html>
