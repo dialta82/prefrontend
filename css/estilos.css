@@ -38,7 +38,7 @@ header {
   /* organiza el contenido en columna */
   
   height: 250px;
-  /* 👈 altura fija opcional, ajustala según tu diseño */
+  /*  altura fija opcional, ajustala según tu diseño */
   box-sizing: border-box;
   /* evita que el padding altere la altura */
 }
@@ -47,7 +47,7 @@ header h1 {
   margin: 0;
   font-size: 2.5em;
   justify-content: flex-end;
-  /* 👈 empuja el contenido hacia abajo */
+  /*  empuja el contenido hacia abajo */
   align-items: flex-start;
   padding: 5px 5px;
 
@@ -87,9 +87,9 @@ header h1 {
 
 .navbar-lista a:hover {
   background-color: var(--color-secundario);
-  /* 👈 ahora usa variable */
+  /*  ahora usa variable */
   color: var(--color-acento);
-  /* 👈 usa variable acento */
+  /*  usa variable acento */
 }
 
 /* === SECCIÓN SERVICIOS (renovada) === */
@@ -125,11 +125,11 @@ header h1 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
   display: flex;
-  /* 👈 agregado */
+  /*  agregado */
   flex-direction: column;
-  /* 👈 apilamos el contenido */
+  /*  apilamos el contenido */
   justify-content: space-between;
-  /* 👈 asegura que el botón quede al fondo */
+  /*  asegura que el botón quede al fondo */
 
 }
 
@@ -219,7 +219,7 @@ footer {
 
 .footer-nav a {
   color: var(--color-acento);
-  /* 👈 uso variable */
+  /*  uso variable */
   text-decoration: none;
   margin: 0 5px;
 }
@@ -243,7 +243,7 @@ footer {
 
   .navbar {
     background-color: #444;
-    /* 👈 leve variación para móviles */
+    /*  leve variación para móviles */
   }
 
   .navbar-lista a {
@@ -279,7 +279,7 @@ footer {
 .grid-reseñas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  /* 👈 responsive automático */
+  /*  responsive automático */
   gap: 20px;
   max-width: 1000px;
   margin: 0 auto;
