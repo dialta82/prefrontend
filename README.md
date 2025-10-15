@@ -26,4 +26,4 @@ Manosos es un e-commerce básico que ofrece servicios de reparación y alquiler 
 - completar  con link de descarga
 
 ## Autor
-Diego Tajano
+Diego  Alberto Tajano
