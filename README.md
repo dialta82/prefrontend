@@ -23,7 +23,11 @@ Manosos es un e-commerce básico que ofrece servicios de reparación y alquiler 
 2. Abrir `index.html` en el navegador o usar Live Server en VSCode.
 
 ## URL
-- completar  con link de descarga
+-[https://github.com/dialta82/prefrontend.git](https://github.com/dialta82/prefrontend.git)
+### 🚀 Deploy en línea
+
+Podés visitar el sitio aquí   
+[https://dialta82.github.io/prefrontend/](https://dialta82.github.io/prefrontend/)
 
 ## Autor
 Diego  Alberto Tajano
