@@ -312,3 +312,88 @@ footer {
   line-height: 1.4;
   color: #444;
 }
+/* === SECCIÓN CONTACTO === */
+#contacto {
+  background-color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#contacto h2 {
+  color: var(--color-primario);
+  margin-bottom: 15px;
+}
+
+#contacto form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#contacto label {
+  font-weight: 600;
+  color: var(--color-secundario);
+  text-align: left;
+}
+
+#contacto input,
+#contacto textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-secundario);
+  border-radius: 5px;
+  font-family: var(--fuente-principal);
+  font-size: 1rem;
+}
+
+#contacto button {
+  background-color: var(--color-primario);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#contacto button:hover {
+  background-color: var(--color-secundario);
+}
+
+/* === CONTACTO RESPONSIVE === */
+@media (max-width: 768px) {
+  #contacto {
+    padding: 20px 10px;
+  }
+
+  #contacto form {
+    width: 90%;
+  }
+
+  #contacto input,
+  #contacto textarea {
+    font-size: 1rem;
+  }
+
+  #contacto button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  #contacto h2 {
+    font-size: 1.4em;
+  }
+
+  #contacto form {
+    gap: 10px;
+  }
+
+  #contacto button {
+    padding: 12px;
+    font-size: 1.1em;
+  }
+}
