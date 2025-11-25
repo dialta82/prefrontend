@@ -103,6 +103,37 @@ document.addEventListener("DOMContentLoaded", () => {
   renderizar();
 });
 
+// === CONTADOR Y ANIMACIÓN DEL ICONO FLOTANTE ===
+function actualizarContadorIcono() {
+  const contador = document.getElementById("contador-carrito");
+  if (!contador) return;
+
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  // mostrar la suma de cantidades si usás cantidad; si no, length
+  const totalItems = carrito.reduce((acc, it) => acc + (it.cantidad || 1), 0);
+  contador.textContent = totalItems;
+
+  // animación breve para feedback
+  const icono = document.getElementById("icono-carrito");
+  if (!icono) return;
+  icono.classList.remove("pop");
+  // reflow para reiniciar la animación
+  void icono.offsetWidth;
+  icono.classList.add("pop");
+}
+
+// Ejecutar al cargar la página
+document.addEventListener("DOMContentLoaded", actualizarContadorIcono);
+
+// Ejecutar cada vez que se agrega o elimina (delegación global ya en tu carrito.js)
+document.addEventListener("click", (evt) => {
+  if (evt.target.closest(".btn-carrito") || evt.target.closest(".btn-eliminar")) {
+    // pequeña espera para asegurar que localStorage ya fue actualizado
+    setTimeout(actualizarContadorIcono, 100);
+  }
+});
+
+
 
 
 

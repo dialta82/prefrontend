@@ -508,3 +508,76 @@ footer {
     max-width: 90%;
   }
 }
+
+/* ICONO FLOTANTE CON SVG CIRCULAR */
+#icono-carrito {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  width: 56px;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  z-index: 9999;
+  transform-origin: center;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ffffff 0%, #f3f9ff 100%);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* tamaño del SVG dentro del círculo */
+#icono-carrito svg { 
+  display: block;
+  width: 28px;
+  height: 28px;
+  pointer-events: none; /* para que el click llegue al anchor */
+}
+
+/* contador redondo */
+#contador-carrito {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #FD5922; /* color primario */
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  border-radius: 999px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+}
+
+/* hover/active */
+#icono-carrito:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+}
+
+/* pequeña animación «pop» cuando se agrega algo */
+#icono-carrito.pop {
+  animation: popCart 420ms cubic-bezier(.2,.9,.3,1);
+}
+@keyframes popCart {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.18); }
+  60%  { transform: scale(.96); }
+  100% { transform: scale(1); }
+}
+
+/* responsivo (móviles) */
+@media (max-width: 480px) {
+  #icono-carrito { top: 12px; right: 12px; width: 48px; height: 48px; }
+  #icono-carrito svg { width: 24px; height: 24px; }
+  #contador-carrito { min-width: 18px; height: 18px; font-size: 11px; top: -5px; right: -5px; }
+}
+

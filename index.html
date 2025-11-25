@@ -70,8 +70,8 @@
 
     <!-- SERVICIOS -->
     <section id="servicios">
-      <h3>Servicios destacados</h3>
-      <p>En esta sección encontrarás los servicios más solicitados de Manosos.</p>
+      <h3>Servicios</h3>
+      <p>En esta sección encontrarás los servicios que Manosos tiene para vos.</p>
 
       <div class="servicios-grid">
 
@@ -91,12 +91,88 @@
           </button>
         </article>
 
+        <article class="servicio-card">
+          <img src="/imagenes/cerrajería.png" alt="Cerrajería">
+          <h4>Cerrajería</h4>
+          <p>Atención rápida y segura para apertura de puertas y cambios de cerraduras.</p>
+          <p class="precio">$8.000</p>
+
+          <button class="btn-carrito"
+            data-id="cerrajeria-1"
+            data-nombre="Cerrajería"
+            data-precio="8000"
+            data-imagen="/imagenes/cerrajería.png">
+            Agregar al carrito
+          </button>
+        </article>
+
+        <article class="servicio-card">
+          <img src="/imagenes/plomeria.png" alt="plomeria">
+          <h4>Plomería</h4>
+          <p>Atención rápida y segura para instalaciones de agua!.</p>
+          <p class="precio">$9.000</p>
+
+          <button class="btn-carrito"
+            data-id="plomeria-1"
+            data-nombre="Plomería"
+            data-precio="8000"
+            data-imagen="/imagenes/plomeria.png">
+            Agregar al carrito
+          </button>
+        </article>
+
+
+      <article class="servicio-card">
+          <img src="/imagenes/electricidad.png" alt="electricidad">
+          <h4>Electricidad</h4>
+          <p>Soluciones para instalaciones electricas.</p>
+          <p class="precio">$12.000</p>
+
+          <button class="btn-carrito"
+            data-id="electricidad"
+            data-nombre="electricidad"
+            data-precio="12000"
+            data-imagen="/imagenes/electricidad.png">
+            Agregar al carrito
+          </button>
+        </article>
+
+        <article class="servicio-card">
+          <img src="/imagenes/fumigación.png" alt="fumigación">
+          <h4>Fumigación</h4>
+          <p>Todo en fumigaciones y control de plagas.</p>
+          <p class="precio">$18.000</p>
+
+          <button class="btn-carrito"
+            data-id="fumigaciones-1"
+            data-nombre="fumigaciones"
+            data-precio="18000"
+            data-imagen="/imagenes/fumigación.png">
+            Agregar al carrito
+          </button>
+        </article>
+
+        <article class="servicio-card">
+          <img src="/imagenes/gasista.png" alt="gasista">
+          <h4>Gasista</h4>
+          <p>La solución profesional para tus problemas de gas  .</p>
+          <p class="precio">$25.000</p>
+
+          <button class="btn-carrito"
+            data-id="gasista"
+            data-nombre="gasista"
+            data-precio="25000"
+            data-imagen="/imagenes/gasista.png">
+            Agregar al carrito
+          </button>
+        </article>
+
         <!-- Copiá el patrón anterior para otras tarjetas (ajustando data-*) -->
       </div>
     </section>
 
     <!-- Herramientas dinámicas (puede llenarse con JS) -->
-    <h3>Herramientas disponibles para alquilar</h3>
+    <h3>Herramientas para alquilar</h3>
     <div id="herramientas-dinamicas" class="servicios-grid"></div>
 
     <!-- VIDEO -->
@@ -125,6 +201,23 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="pages/cards.js"></script>   <!-- si lo usás -->
   <script src="/carrito.js"></script>
+
+  <!-- ICONO FLOTANTE: SVG CIRCULAR DE CARRITO -->
+<a href="pages/carrito.html" id="icono-carrito" aria-label="Ver carrito" >
+  <!-- SVG: carrito -->
+  <svg id="svg-carrito" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+    <circle cx="12" cy="12" r="11" fill="white" />
+    <g fill="none" stroke="#111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 3h2l.9 5.4A2 2 0 0 0 7.8 10h8.4a2 2 0 0 0 2-1.6L20.6 6H6" />
+      <circle cx="10" cy="18" r="1.3" />
+      <circle cx="16" cy="18" r="1.3" />
+    </g>
+  </svg>
+
+  <!-- contador -->
+  <span id="contador-carrito" aria-live="polite">0</span>
+</a>
+
 </body>
 
 </html>
