@@ -2,7 +2,7 @@
 const herramientas = [
   {
     nombre: "Taladro percutor",
-    precio: 15000,
+    precio: 16000,
     imagen: "imagenes/taladro.png",
     descripcion: "Taladro percutor 800W, ideal para trabajos en madera y mampostería."
   },
