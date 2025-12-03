@@ -41,7 +41,21 @@ document.addEventListener("click", (evt) => {
 
   guardarCarrito(carrito);
   // feedback visual (puedes reemplazar por un toast más adelante)
-  alert(`Servicio agregado: ${nombre}`);
+  Swal.fire({
+    icon: "success",
+    title: "Agregado",
+    text: `El servicio "${nombre}" fue agregado al carrito`,
+    timer: 1500,
+    showConfirmButton: false
+});
+Swal.fire({
+    icon: "warning",
+    title: "Servicio eliminado",
+    timer: 1200,
+    showConfirmButton: false
+});
+
+
 });
 
 // --- 2) Código de renderizado / eliminación SÓLO si estamos en la página del carrito ---

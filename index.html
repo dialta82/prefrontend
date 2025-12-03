@@ -64,112 +64,23 @@
   </nav>
 
   <main>
-    <div class="que-servicio-necesitas">
-      <h4>¿Qué servicio para tu casa necesitas hoy? 🛠️</h4>
-    </div>
+  <div class="que-servicio-necesitas">
+    <h4>¿Qué servicio para tu casa necesitas hoy? 🛠️</h4>
+  </div>
 
-    <!-- SERVICIOS -->
-    <section id="servicios">
-      <h3>Servicios</h3>
-      <p>En esta sección encontrarás los servicios que Manosos tiene para vos.</p>
+  <!-- SERVICIOS -->
+<section id="servicios">
+  <h3>Servicios</h3>
+  <p>En esta sección encontrarás los servicios que Manosos tiene para vos.</p>
 
-      <div class="servicios-grid">
-
-        <!-- Ejemplo: Carpintería (botón agrega al carrito) -->
-        <article class="servicio-card">
-          <img src="imagenes/carpinteria.png" alt="Carpintería">
-          <h4>Carpintería</h4>
-          <p>Reparaciones de muebles y fabricación a medida.</p>
-          <p class="precio">$10.000</p>
-
-          <button class="btn-carrito"
-            data-id="carpinteria-1"
-            data-nombre="Carpintería"
-            data-precio="10000"
-            data-imagen="imagenes/carpinteria.png">
-            Agregar al carrito
-          </button>
-        </article>
-
-        <article class="servicio-card">
-          <img src="/imagenes/cerrajería.png" alt="Cerrajería">
-          <h4>Cerrajería</h4>
-          <p>Atención rápida y segura para apertura de puertas y cambios de cerraduras.</p>
-          <p class="precio">$8.000</p>
-
-          <button class="btn-carrito"
-            data-id="cerrajeria-1"
-            data-nombre="Cerrajería"
-            data-precio="8000"
-            data-imagen="/imagenes/cerrajería.png">
-            Agregar al carrito
-          </button>
-        </article>
-
-        <article class="servicio-card">
-          <img src="/imagenes/plomeria.png" alt="plomeria">
-          <h4>Plomería</h4>
-          <p>Atención rápida y segura para instalaciones de agua!.</p>
-          <p class="precio">$9.000</p>
-
-          <button class="btn-carrito"
-            data-id="plomeria-1"
-            data-nombre="Plomería"
-            data-precio="8000"
-            data-imagen="/imagenes/plomeria.png">
-            Agregar al carrito
-          </button>
-        </article>
+  <!-- Contenedor único donde aparecen TODAS las tarjetas -->
+   
+  <div class="servicios-grid" id="servicios-dinamicos"></div>
+</section>
 
 
-      <article class="servicio-card">
-          <img src="/imagenes/electricidad.png" alt="electricidad">
-          <h4>Electricidad</h4>
-          <p>Soluciones para instalaciones electricas.</p>
-          <p class="precio">$12.000</p>
+</main>
 
-          <button class="btn-carrito"
-            data-id="electricidad"
-            data-nombre="electricidad"
-            data-precio="12000"
-            data-imagen="/imagenes/electricidad.png">
-            Agregar al carrito
-          </button>
-        </article>
-
-        <article class="servicio-card">
-          <img src="/imagenes/fumigación.png" alt="fumigación">
-          <h4>Fumigación</h4>
-          <p>Todo en fumigaciones y control de plagas.</p>
-          <p class="precio">$18.000</p>
-
-          <button class="btn-carrito"
-            data-id="fumigaciones-1"
-            data-nombre="fumigaciones"
-            data-precio="18000"
-            data-imagen="/imagenes/fumigación.png">
-            Agregar al carrito
-          </button>
-        </article>
-
-        <article class="servicio-card">
-          <img src="/imagenes/gasista.png" alt="gasista">
-          <h4>Gasista</h4>
-          <p>La solución profesional para tus problemas de gas  .</p>
-          <p class="precio">$25.000</p>
-
-          <button class="btn-carrito"
-            data-id="gasista"
-            data-nombre="gasista"
-            data-precio="25000"
-            data-imagen="/imagenes/gasista.png">
-            Agregar al carrito
-          </button>
-        </article>
-
-        <!-- Copiá el patrón anterior para otras tarjetas (ajustando data-*) -->
-      </div>
-    </section>
 
     <!-- Herramientas dinámicas (puede llenarse con JS) -->
     <h3>Herramientas para alquilar</h3>
@@ -195,12 +106,22 @@
 
   </main>
 
-  <footer id="Contacto">...</footer>
+  <footer id="Contacto">
+     <nav class="footer-nav"> 
+      <a href="index.html">Inicio</a> | 
+      <a href="#servicios">Servicios</a> | 
+      <a href="pages/contacto.html">Contacto</a> </nav>
+       <p>© 2025 Manosos - Todos los derechos reservados</p> <p><a href="pages/contacto.html">Contacto</a></p> <h4>Ubicación</h4> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8988.789711484542!2d-58.39646478739404!3d-34.809228678505626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd36602e010cf%3A0x3228bb4050895397!2sBoulevard%20Shopping!5e0!3m2!1ses!2sar!4v1764288554792!5m2!1ses!2sar" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </footer>
 
   <!-- SCRIPTS: IMPORTANTE: rutas relativas correctas -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="pages/cards.js"></script>   <!-- si lo usás -->
   <script src="/carrito.js"></script>
+  <script src="/js/seed.js"></script>
+  <script src="js/dinamicos.js"></script>
+
+  <script src="js/renderServicios.js"></script>
 
   <!-- ICONO FLOTANTE: SVG CIRCULAR DE CARRITO -->
 <a href="pages/carrito.html" id="icono-carrito" aria-label="Ver carrito" >
@@ -217,6 +138,7 @@
   <!-- contador -->
   <span id="contador-carrito" aria-live="polite">0</span>
 </a>
+
 
 </body>
 
