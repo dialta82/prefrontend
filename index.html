@@ -64,27 +64,215 @@
   </nav>
 
   <main>
+    <!-- ====== CATEGORÍAS DE SERVICIOS (colocar en <main>) ====== -->
+<section id="categorias-servicios">
   <div class="que-servicio-necesitas">
     <h4>¿Qué servicio para tu casa necesitas hoy? 🛠️</h4>
   </div>
+  
+  <p>Elegí la categoría que corresponda y completá el formulario guiado.</p>
+
+  <div class="categorias-grid">
+    <article class="categoria-card" data-categoria="Electricidad">
+      <img src="/imagenes/electricidad.png" alt="Electricidad">
+      <h4>Electricidad</h4>
+      <p>Servicio disponible</p>
+    </article>
+
+    <article class="categoria-card" data-categoria="Plomería">
+      <img src="/imagenes/plomeria.png" alt="Plomería">
+      <h4>Plomería</h4>
+      <p>Servicio disponible</p>
+    </article>
+
+    <article class="categoria-card" data-categoria="Gasista">
+      <img src="/imagenes/gasista.png" alt="Gasista">
+      <h4>Gasista</h4>
+      <p>Servicio disponible</p>
+    </article>
+
+    <article class="categoria-card" data-categoria="Cerrajería">
+      <img src="/imagenes/cerrajería.png" alt="Cerrajería">
+      <h4>Cerrajería</h4>
+      <p>Servicio disponible</p>
+    </article>
+
+    <article class="categoria-card" data-categoria="Fumigación">
+      <img src="/imagenes/fumigación.png" alt="Fumigación">
+      <h4>Fumigación</h4>
+      <p>Servicio disponible</p>
+    </article>
+
+    <article class="categoria-card" data-categoria="Seguridad">
+      <img src="/imagenes//seguridad.png" alt="Seguridad">
+      <h4>Seguridad</h4>
+      <p>Servicio disponible</p>
+    </article>
+  </div>
+</section>
+
+<!-- ====== MODAL WIZARD REUTILIZABLE (colocar cerca del final del <body>) ====== -->
+<div class="modal fade" id="wizardModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Solicitar servicio: <span id="modalCategoria"></span></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Steps container -->
+        <div id="wizardSteps">
+
+          <!-- Step 1: opciones dinámicas -->
+          <div class="wizard-step" data-step="1">
+            <p><strong>¿Qué servicio necesitas?</strong></p>
+            <div id="opciones-step1" class="wizard-options">
+              <!-- Aquí se inyectan los checkbox según categoría -->
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="wizard-step" data-step="2" style="display:none;">
+            <p><strong>¿Para qué tipo de vivienda?</strong></p>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="vivienda" id="v_casa" value="Casa">
+              <label class="form-check-label" for="v_casa">Casa</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="vivienda" id="v_depto" value="Departamento">
+              <label class="form-check-label" for="v_depto">Departamento</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="vivienda" id="v_ph" value="P.H.">
+              <label class="form-check-label" for="v_ph">P.H.</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="vivienda" id="v_ofi" value="Oficina">
+              <label class="form-check-label" for="v_ofi">Oficina</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="vivienda" id="v_local" value="Local Comercial">
+              <label class="form-check-label" for="v_local">Local Comercial</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="vivienda" id="v_depo" value="Deposito/Galpón">
+              <label class="form-check-label" for="v_depo">Deposito/Galpón</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="vivienda" id="v_ind" value="Industria">
+              <label class="form-check-label" for="v_ind">Industria</label>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="wizard-step" data-step="3" style="display:none;">
+            <p><strong>Describí brevemente el problema</strong></p>
+            <textarea id="inputDescripcion" class="form-control" rows="4" placeholder="Describe con tus palabras..."></textarea>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="wizard-step" data-step="4" style="display:none;">
+            <p><strong>¿De qué zona sos?</strong></p>
+            <input id="inputZona" class="form-control" placeholder="Ej: Zona Norte (Gran BsAs), CABA, etc.">
+          </div>
+
+          <!-- Step 5 -->
+          <div class="wizard-step" data-step="5" style="display:none;">
+            <p><strong>¿Medio de contacto preferido?</strong></p>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="medio" id="m_tel" value="Teléfono">
+              <label class="form-check-label" for="m_tel">Teléfono</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="medio" id="m_wa" value="WhatsApp">
+              <label class="form-check-label" for="m_wa">WhatsApp</label>
+            </div>
+
+            <div style="margin-top:10px;">
+              <input id="inputContacto" class="form-control" placeholder="Número (ej: 11XXXXXXXX)">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div style="flex:1;text-align:left;">
+          <small id="wizardStepLabel">Paso 1 de 5</small>
+        </div>
+
+        <button type="button" class="btn btn-secondary" id="wizardPrev" style="display:none;">Anterior</button>
+        <button type="button" class="btn btn-primary" id="wizardNext">Continuar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+
+        
 
   <!-- SERVICIOS -->
-<section id="servicios">
+<!--  <section id="servicios">
   <h3>Servicios</h3>
-  <p>En esta sección encontrarás los servicios que Manosos tiene para vos.</p>
+  <p>En esta sección encontrarás los servicios que Manosos tiene para vos.</p> -->
 
   <!-- Contenedor único donde aparecen TODAS las tarjetas -->
    
-  <div class="servicios-grid" id="servicios-dinamicos"></div>
-</section>
+  <!--div class="servicios-grid" id="servicios-dinamicos"></div>
+</section> -->
 
 
 </main>
 
 
-    <!-- Herramientas dinámicas (puede llenarse con JS) -->
-    <h3>Herramientas para alquilar</h3>
-    <div id="herramientas-dinamicas" class="servicios-grid"></div>
+    <!-- ====== HERRAMIENTAS (sección dentro de <main>) ====== -->
+<section id="herramientas" class="seccion-herramientas">
+  <h3>Herramientas eléctricas</h3>
+  <p>Compra nuestras herramientas nuevas.</p>
+
+  <div class="herramientas-grid" id="herramientas-grid">
+    <!-- Las tarjetas se renderizan con JS (js/herramientas.js) -->
+  </div>
+</section>
+
+<!-- ====== MODAL DETALLE HERRAMIENTA (reutilizable) ====== -->
+<div class="modal fade" id="herramientaModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="herrTitulo"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="detalle-grid">
+          <img id="herrImagen" src="" alt="" class="detalle-img">
+          <div class="detalle-info">
+            <p id="herrPrecio" class="detalle-precio"></p>
+            <p id="herrDescripcion" class="detalle-desc"></p>
+
+            <div style="margin-top:16px;">
+              <label for="cantidadHerr">Cantidad</label>
+              <input id="cantidadHerr" type="number" min="1" value="1" class="form-control" style="width:120px;">
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btnAgregarCarritoModal" type="button" class="btn btn-warning">Agregar al carrito</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
     <!-- VIDEO -->
     <h3>Nuevo producto!!</h3>
@@ -101,8 +289,11 @@
       </div>
     </section>
 
-    <!-- RESEÑAS (igual que antes) -->
+    <!-- RESEÑAS falta agregarrrr -->
     <section id="reseñas">...</section>
+
+    
+  
 
   </main>
 
@@ -115,29 +306,37 @@
   </footer>
 
   <!-- SCRIPTS: IMPORTANTE: rutas relativas correctas -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="pages/cards.js"></script>   <!-- si lo usás -->
-  <script src="/carrito.js"></script>
-  <script src="/js/seed.js"></script>
-  <script src="js/dinamicos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="pages/cards.js"></script>
+<script src="carrito.js"></script>
+<script src="js/seed.js"></script>
+<script src="js/dinamicos.js"></script>
 
-  <script src="js/renderServicios.js"></script>
+<script src="js/renderServicios.js"></script>
+<script src="js/servicios_wizard.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <!-- ICONO FLOTANTE: SVG CIRCULAR DE CARRITO -->
-<a href="pages/carrito.html" id="icono-carrito" aria-label="Ver carrito" >
-  <!-- SVG: carrito -->
-  <svg id="svg-carrito" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
-    <circle cx="12" cy="12" r="11" fill="white" />
-    <g fill="none" stroke="#111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M3 3h2l.9 5.4A2 2 0 0 0 7.8 10h8.4a2 2 0 0 0 2-1.6L20.6 6H6" />
-      <circle cx="10" cy="18" r="1.3" />
-      <circle cx="16" cy="18" r="1.3" />
-    </g>
+<script src="js/carrito_herramientas_page.js"></script>
+<script src="js/herramientas.js"></script>   <!-- ESTE ES EL QUE FALTABA CORREGIR -->
+
+
+  
+ 
+  
+  
+  
+
+<!-- ====== ICONO CARRITO FLOTANTE ====== -->
+<a href="pages/carrito_herramientas.html" id="carrito-flotante" aria-label="Ver carrito">
+<!-- SVG circular cart -->
+  <svg width="56" height="56" viewBox="0 0 24 24" fill="none">
+    <circle cx="12" cy="12" r="11" stroke="#1976D2" stroke-width="1.5" fill="#FD5922" />
+    <path d="M7 7h10l-1.4 6.2A2 2 0 0 1 13.7 15H9.3a2 2 0 0 1-1.9-1.8L6 4H4"
+      stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
-
-  <!-- contador -->
-  <span id="contador-carrito" aria-live="polite">0</span>
+  <span id="contador-carrito">0</span>
 </a>
+
 
 
 </body>

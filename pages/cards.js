@@ -1,5 +1,5 @@
 // === BASE DE DATOS DE HERRAMIENTAS ===
-const herramientas = [
+/*const herramientas = [
   {
     nombre: "Taladro percutor",
     precio: 16000,
@@ -65,4 +65,4 @@ herramientas.forEach(h => {
   });
 
   contenedor.appendChild(card);
-});
+});*/
